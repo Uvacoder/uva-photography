@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inspo(ration) by Arpit Batra</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <!-- Primary Meta Tags -->
+    <title>Inspo(ration) by Arpit Batra</title>
+    <meta name="title" content="Inspo(ration) by Arpit Batra" />
+    <meta name="description" content="A collection of inspirational photos by Arpit Batra" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://inspo-arpit.vercel.app/" />
+    <meta property="og:title" content="Inspo(ration) by Arpit Batra" />
+    <meta property="og:description" content="A collection of inspirational photos by Arpit Batra" />
+    <meta property="og:image" content="https://inspo-arpit.vercel.app/assets/images/og-loc-inspo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://inspo-arpit.vercel.app/" />
+    <meta property="twitter:title" content="Inspo(ration) by Arpit Batra" />
+    <meta property="twitter:description" content="A collection of inspirational photos by Arpit Batra" />
+    <meta property="twitter:image" content="https://inspo-arpit.vercel.app/assets/images/og-loc-inspo.png" />
+    <meta property="twitter:creator" content="@arpitbatra123" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <main class="container">
+      <ul class="grid">
+        {% for imageData in images reversed %} {% assign image = imageData.image %} {% assign backgroundColor =
+        imageData.background %}
+        <li class="item" style="background-color: {{ backgroundColor }};">
+          <!-- Empty image alts until i can find a better way to caption them -->
+          <a href="./inspo/{{ image }}.png" data-fancybox="inspo">
+            <picture>
+              <source srcset="./inspo/webp/{{ image }}.webp" type="image/webp" />
+              <source srcset="./inspo/{{ image }}.png" type="image/png" />
+              <img src="./inspo/{{ image }}.png" loading="lazy" alt="" />
+            </picture>
+          </a>
+        </li>
+        {% endfor %}
+        <!-- https://css-tricks.com/adaptive-photo-layout-with-flexbox/ -->
+        <li></li>
+      </ul>
+      <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+      <ul class="links">
+        <li class="rss">
+          <a rel="alternate" type="application/rss+xml" href="https://inspo-arpit.vercel.app/feed.xml" title="RSS Feed"
+            >RSS Feed</a
+          >
+        </li>
+        <li class="github">
+          <a rel="me" href="https://github.com/arpitbatra123/inspo-arpit" title="Fork on Github">Github</a>
+        </li>
+        <li class="link">
+          <a rel="me" href="https://twitter.com/arpitbatra123" title="@arpitbatra123 on Twitter">Twitter</a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

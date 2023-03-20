@@ -1,0 +1,25 @@
+{
+  "name": "inspo-arpit",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "colorthief": "^2.3.2",
+    "concurrently": "^6.2.1",
+    "cwebp": "^2.0.5",
+    "sass": "^1.41.1",
+    "@11ty/eleventy-plugin-rss": "^1.1.1"
+  },
+  "scripts": {
+    "build": "eleventy && npm run sass",
+    "serve": "npm run clean && concurrently 'eleventy --serve' 'npm run sass:watch'",
+    "sass": "sass styles:_site/styles --no-source-map --style=compressed --update",
+    "sass:watch": "npm run sass && npm run sass -- --watch",
+    "clean": "rm -rf _site",
+    "format": "npx prettier --write .",
+    "order": "bash order.sh inspo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

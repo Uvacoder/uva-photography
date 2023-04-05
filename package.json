@@ -16,8 +16,7 @@
     "sass": "sass styles:_site/styles --no-source-map --style=compressed --update",
     "sass:watch": "npm run sass && npm run sass -- --watch",
     "clean": "rm -rf _site",
-    "format": "npx prettier --write .",
-    "order": "bash order.sh inspo"
+    "format": "npx prettier --write ."
   },
   "keywords": [],
   "author": "",
